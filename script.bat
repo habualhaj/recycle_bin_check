@@ -1,14 +1,13 @@
 @echo off
 
-::::::::: EDIT PATH HERE :::::::::::
-C:\path\to\RBCmd.exe -q -d "C:\$Recycle.Bin" --csv %TEMP%\export --dt "yyyy-MM-dd" >nul
-::::::::::::::::::::::::::::::::::::
-
-
 :: Check if %TEMP%\export exists and delete it if it does
 if exist %TEMP%\export (
     rmdir /s /q %TEMP%\export
 )
+
+::::::::: EDIT PATH HERE :::::::::::
+C:\path\to\RBCmd.exe -q -d "C:\$Recycle.Bin" --csv %TEMP%\export --dt "yyyy-MM-dd" >nul
+::::::::::::::::::::::::::::::::::::
 
 
 set TEMP_PYTHON_FILE=%TEMP%\myscript.py
